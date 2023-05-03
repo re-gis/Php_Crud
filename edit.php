@@ -1,3 +1,25 @@
+
+<?php
+include_once './config.php';
+$user_id = $_GET[ 'user_id' ];
+$sql = "SELECT * FROM users WHERE user_id = '$user_id'";
+$result = mysqli_query( $conn, $sql );
+if ( $result ) {
+    $row = mysqli_fetch_assoc( $result );
+    if ( $row ) {
+        $lname = $row[ 'lname' ];
+        $fname = $row[ 'fname' ];
+        $email = $row[ 'email' ];
+        $password = $row[ 'password' ];
+    } else {
+        echo 'Invalid credentials!';
+    }
+} else {
+    echo 'Error: ' . mysqli_error( $conn );
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,22 +51,22 @@
           <div style="margin-bottom: 10px">
             <label for="fname">Firstname</label>
             <input style="display: flex;width: 100%;"" type="text" placeholder="Firstname"
-            name="fname">
+            name="fname" value="<?php echo $fname;?>">
           </div>
           <div style="margin-bottom: 10px">
             <label for="lname">Lastname</label>
             <input style="display: flex;width: 100%;"" type="text" placeholder="Firstname"
-            name="lname">
+            name="lname" value="<?php echo $lname;?>">
           </div>
           <div style="margin-bottom: 10px">
             <label for="email">Email</label>
             <input style="display: flex;width: 100%;"" type="email" placeholder="Email"
-            name="email">
+            name="email" value="<?php echo $email;?>">
           </div>
           <div style="margin-bottom: 10px">
             <label for="password">Password</label>
             <input style="display: flex;width: 100%;"" type="password" placeholder="Password"
-            name="password">
+            name="password" value="<?php echo $password;?>">
           </div>
           <div>
             <button
