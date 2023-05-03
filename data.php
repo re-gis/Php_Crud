@@ -5,7 +5,6 @@ while( $row = mysqli_fetch_assoc( $sql ) ) {
               <td style="border-bottom: 1px solid black;">'. $row[ 'fname' ] .'</td>
               <td style="border-bottom: 1px solid black;"> '. $row[ 'lname' ] .'</td>
               <td style="border-bottom: 1px solid black;">'. $row[ 'email' ] . '</td>
-              <td style="border-bottom: 1px solid black;">' . $row[ 'password' ] . '</td>
               <td style="border-bottom: 1px solid black;" style="display: flex; gap: 10px">
                 <button
                   style="

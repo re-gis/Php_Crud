@@ -64,7 +64,6 @@
               <th style="border-bottom: 1px solid black;">Firstname</th>
               <th style="border-bottom: 1px solid black;">Lastname</th>
               <th style="border-bottom: 1px solid black;">Email</th>
-              <th style="border-bottom: 1px solid black;">Password</th>
               <th style="border-bottom: 1px solid black;">Action</th>
             </tr>
           </thead>
